@@ -39,13 +39,14 @@ console.log(QandA.choices[0]);
     var correct = 0
     var incorrect = 0
     var unanswered = 0
-    
+
 
 
 //    Make function to ask questions in a random order and includes all the questions each round.
 
         // var randomQandA = QandA[Math.floor(Math.random() * QandA.length); 
         // function to make sure all questions get asked
+        // if question has been asked then 
         // for loop to loop through questions and if/else to verify question
     
     // change to random index in Object.
