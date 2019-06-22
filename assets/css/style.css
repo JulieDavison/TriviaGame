@@ -1,0 +1,57 @@
+body {
+    background-image: url(http://ei.isnooth.com/multimedia/9/5/2/image_4708833.jpeg);
+}
+
+h1 {
+    font-size: 45px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 14px;
+}
+
+.list-group-item:hover {
+    background: peachpuff;
+    color: #888888;
+}
+.list-group-item:active {
+    background: lightseagreen;
+    color: black;
+}
+#jumbo {
+    margin: 60px; 
+    font-family: Georgia, 'Times New Roman', Times, serif; 
+    color: #4aaaa5;
+    padding: 20px;
+    background: #ffffff;
+    padding-bottom: 80px;
+    
+    
+}
+
+#footer-container {
+    clear: both;
+    background: palegoldenrod;
+    color: #888888;
+    border-top: 8px solid #4aaaa5;
+    padding: 20px 0;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    left: 0;   
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+#button {
+    box-align: center;
+}
+
+.question-container {
+    width: 75vw;
+}

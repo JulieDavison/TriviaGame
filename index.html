@@ -1,39 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivia Game</title>
 
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="../TriviaGame/assets/css/style.css">
 </head>
+
 <body>
+    <!-- Create html and css to display questions and final page scoring plus replay game button. -->
+
+    <div class="main-container">
+        <h1></h1>
+    </div>
+    <!--Jumbotron-->
+
+    <div class="col-sm-12">
+        <h1>Sonoma County - Trivia Game</h1>
+        <div id="button">
+            <input type="button" value="Start-Game" id="startButton">
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div id="jumbo" class="jumbotron jumbotron-fluid question-container">
+                <div class="container">
+                    <!-- <h4 class="display-5">Question: # _</h4> -->
+                    <div>
+                        Choose one answer before time is up! <span id="timer"></span>
+                    </div>
+
+                    <div class="wrap">
+                        <div>
+                            <h4>Time Remaining: <span id="timedisplay"></span></h4>
+                        </div>
+                        <!-- Question -->
+                        <h2><span id="question"></span></h2>
+                        <div id="answerBlock"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
 
 
+    </div>
 
-   <!-- Make object to hold questions, wrong answers, correct answer, picture. -->
+    <footer id="footer-container">
+        <div>
+            &copy; Copyright 2019 Julie Davison
+        </div>
+    </footer>
 
+    <!-- Script -->
+    <script src="../TriviaGame/assets/javascript/app.js"></script>
 
-   <!-- Global Variable -->
-
-   <!-- Make function to ask questions in a random order and includes all the questions each round. -->
-    
-   <!-- Make function that resets timer for each question and the game.  Keeping track of correct, incorrect and unanswered questions for final page. -->
-
-   <!-- Create html and css to display questions and final page scoring plus replay game button. -->
-
-   <!-- Use if and if/else statements to determine if the questions have been answered correctly. -->
-
-
-
-<!-- Script -->
-<script src="app.js"></script>
-    
 </body>
+
 </html>
