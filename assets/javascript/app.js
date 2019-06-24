@@ -7,31 +7,31 @@ $(document).ready(function () {
     //    Make object to hold questions, wrong answers, correct answer, picture.
     var QandA = [
         {
-            question: "Which of these AVAs is in both Napa and Sonoma County?", choices: ["Carneros", "Knights Valley", "All of these", "None of these"], correct: 0, imagefile: "assets.images.AVA-Map.jpg",
+            question: "Which of these AVAs is in both Napa and Sonoma County?", choices: ["Carneros", "Knights Valley", "All of these", "None of these"], correct: 0, imagefile: "assets/images/AVA-Map.jpg",
         },
         {
-            question: "Which of these is a type of wine cork?", choices: ["Synthetic Cork", "Screw Cap", "Glass Cork", "All of these"], correct: 3, imagefile: "assets.images.Buds.jpg",
+            question: "Which of these is a type of wine cork?", choices: ["Synthetic Cork", "Screw Cap", "Glass Cork", "All of these"], correct: 3, imagefile: "assets/images/Cork.jpg",
         },
         {
-            question: "Why is there mustard growing in the vineyards?", choices: ["Franciscan missionaries walked the fields with sacks on their backs having smalls holes to distribute the seeds", "It is turned into mulch and provides valuable nutrients and phosphorus for the emerging grape plants.", "It grows wild!", "All of these"], correct: 3, imagefile: "assets.images.Grapes.jpg",
+            question: "Why is there mustard growing in the vineyards?", choices: ["Franciscan missionaries walked the fields with sacks on their backs having smalls holes to distribute the seeds", "It is turned into mulch and provides valuable nutrients and phosphorus for the emerging grape plants.", "It grows wild!", "All of these"], correct: 3, imagefile: "assets/images/MustardField.jpg",
         },
         {
-            question: "What makes a red wine red?", choices: ["Juice from the inside of the grape", "The skins of the grape during fermentation ", "Food coloring", "Beet juice"], correct: 1, imagefile: "assets.images.Grapes.jpg",
+            question: "What makes a red wine red?", choices: ["Juice from the inside of the grape", "The skins of the grape during fermentation ", "Food coloring", "Beet juice"], correct: 1, imagefile: "assets/images/Grapes2.jpg",
         },
         {
-            question: "What event put California wines to the attention of the world's stage?", choices: ["World's Fair", "Chronicle Wine Competition", "1976 Judgment of Paris", "Do they make wine in California?"], correct: 2, imagefile: "assets.images.Grapes.jpg",
+            question: "What event put California wines to the attention of the world's stage?", choices: ["World's Fair", "Chronicle Wine Competition", "1976 Judgment of Paris", "Do they make wine in California?"], correct: 2, imagefile: "assets/images/Chateau.jpg",
         },
         {
-            question: "Which of these is a good thing in wine?", choices: ["Cat Pee", "Wet Dog", "Noble Rot", "Brettanomyces"], correct: 2, imagefile: "assets.images.Grapes.jpg",
+            question: "Which of these is a good thing in wine?", choices: ["Cat Pee", "Wet Dog", "Noble Rot", "Brettanomyces"], correct: 2, imagefile: "assets/images/NobleRot.jpg",
         },
         {
-            question: "What is the best winery in Sonoma County?", choices: ["Martin Ray", "Carlisle", "Bedrock", "All of these"], correct: 3, imagefile: "assets.images.Grapes.jpg",
+            question: "What is the best winery in Sonoma County?", choices: ["Martin Ray", "Carlisle", "Bedrock", "All of these"], correct: 3, imagefile: "assets/images/russian-river.jpg",
         },
         {
-            question: "Which of these does not produce red wine?", choices: ["Viognier", "Syrah", "Mourvedre", "Malbec"], correct: 0, imagefile: "assets.images.Grapes.jpg",
+            question: "Which of these does not produce red wine?", choices: ["Viognier", "Syrah", "Mourvedre", "Malbec"], correct: 0, imagefile: "assets/images/Viognier.jpg",
         },
         {
-            question: "In which months does bud break usually happen in Sonoma County?", choices: ["December", "July", "March", "January"], correct: 2, imagefile: "assets.images.Grapes.jpg",
+            question: "In which months does bud break usually happen in Sonoma County?", choices: ["December", "July", "March", "January"], correct: 2, imagefile: "assets/images/Buds.jpg",
         },
 
     ];
@@ -66,8 +66,10 @@ $(document).ready(function () {
         }, 1000);
 
     }
-    function resetData() {
 
+    function resetData() {
+        correct = 0;
+        incorrect = 0;
         timeUp = false
 
         pick = [];
@@ -77,12 +79,13 @@ $(document).ready(function () {
         askedQuest = [];
 
     }
+
     function gameOver() {
         $("#answerBlock").empty();
         $("#answerBlock").html("<h2>Game Over!  Let's see how you did.</h2>");
         $("#answerBlock").append("<h4> Correct: " + correct + "</h4>");
         $("#answerBlock").append("<h4> Incorrect: " + incorrect + "</h4>");
-        // $("#answerBlock").append("<h4> Unanswered: " + unanswered + "</h4>");
+
         $("#startButton").show();
         resetData();
         $("#timeDisplayWrap").hide();
@@ -90,9 +93,13 @@ $(document).ready(function () {
         $("#question").hide();
 
     }
+
+    $("#timeDisplayWrap").hide();
+    $("#timerWrap").hide();
     // Start-game button is clicked to begin questions.
     $("#startButton").on("click", function () {
         $("#startButton").hide();
+        resetData();
         timerGenerator();
         startNewQuest();
 
@@ -114,6 +121,7 @@ $(document).ready(function () {
             $("#question").text(pick.question);
 
 
+
             var ulEl = $('<ul>').addClass('list-group');
 
             for (var i = 0; i < pick.choices.length; i++) {
@@ -126,11 +134,13 @@ $(document).ready(function () {
                 ulEl.append(questChoice)
 
             }
+            $("#imgDiv").empty();
             $("#answerBlock").empty();
             $("#answerBlock").append(ulEl);
 
             console.log(pick);
             //click function to select answer and outcomes
+
             $(".answerchoice").on("click", function () {
                 console.log('I Work')
                 //Clear timer interval so we do not get unwanted results
@@ -141,21 +151,22 @@ $(document).ready(function () {
                 if (userGuess === pick.correct) {
                     correct++;
                     $("#message").text("Good Job, you picked the right answer!");
+                    $("#imgDiv").empty();
                     $("#imgDiv").attr("src", pick.imagefile);
-
+                    console.log(pick.imagefile);
 
                 }
                 else if (userGuess !== pick.correct) {
                     incorrect++;
-                    $("#message").text("Wrong answer :( ");
-
-                    // $("#imgDiv").attr("src", pick.imagefile);
+                    $("#message").text("Darn it!  You chose the wrong answer!");
+                    $("#imgDiv").empty();
+                    $("#imgDiv").attr("src", "assets/images/KeepCalm.jpg");
                 }
 
                 setTimeout(function () {
                     $("#message").empty();
                     pickRandonQandA();
-                }, 500);
+                }, 1000);
             });
 
 
@@ -172,6 +183,9 @@ $(document).ready(function () {
             // pick = QandA[randomQandA];
             // pick is now the question object
             pickRandonQandA();
+            $("#timeDisplayWrap").show();
+            $("#timerWrap").show();
+            $("#question").show();
             console.log(pick);
 
             // Display "pick" in jumbotron
