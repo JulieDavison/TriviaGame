@@ -1,6 +1,6 @@
 # TriviaGame
 
-Link to Game:
+Link to Game:  https://juliedavison.github.io/TriviaGame/
 
 Description:
 Answer the questions by choosing an answer before time runs out.  The correctly answered questions will display an image about the question.  A wrongly answered question displays a different image.
