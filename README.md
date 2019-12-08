@@ -8,9 +8,10 @@ Link to the
 
 ### Instructions:
 
-Complete the questions by choosing an answer before time runs out.  The correctly answered questions will display an image relating to the question.  
-A wrongly answered question displays a certain image.
-The final page tallies the number of questions answered correct and incorrect with an option to restart the game.
+* Complete the questions by choosing an answer before time runs out.  
+* The correctly answered questions will display an image relating to the question.  
+* A wrongly answered question displays a certain image.
+* The final page tallies the number of questions answered correct and incorrect with an option to restart the game.
 
 
 ### Technologies/Languages Used:
