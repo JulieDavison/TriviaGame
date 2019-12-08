@@ -1,9 +1,9 @@
 # TriviaGame
-10 Question Trivia Game that randomly chooses the order to present multiple-choice questions with their possible answers.
+Nine Question Trivia Game that randomly chooses the order to present multiple-choice questions with their possible answers.
 The game is timed and gives your score at the end of the game.
 
 Link to the  
-[Trivia Game](https://juliedavison.github.io/TriviaGame/)
+[Trivia Game - Sonoma County Edition](https://juliedavison.github.io/TriviaGame/)
 
 
 ### Instructions:
